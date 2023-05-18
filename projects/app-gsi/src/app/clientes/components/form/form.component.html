@@ -1,0 +1,44 @@
+<mat-toolbar fxLayout fxLayoutAlign="space-between center">
+    <h3>{{titulo}}</h3>
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-dialog-content>
+    <form fxLayout="column" [formGroup]="formulario">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombres Completos</mat-label>
+            <input type="text" matInput formControlName="nombresCompletos">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Direccion</mat-label>
+            <input type="text" matInput formControlName="direccion">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input type="text" matInput formControlName="fechaNacimiento">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Celular</mat-label>
+            <input type="text" matInput formControlName="celular">
+        </mat-form-field>
+        <div fxLayout fxLayoutAlign="end" fxLayoutGap="10px">
+            <button
+                mat-raised-button
+                color="primary"
+                type="button"
+                [disabled]="formulario.invalid"
+                (click)="grabar()">
+                Grabar
+            </button>
+            <button
+                mat-button
+                color="primary"
+                type="button"
+                mat-dialog-close>
+                Cancelar
+            </button>
+        </div>
+
+    </form>
+</mat-dialog-content>

@@ -1,0 +1,13 @@
+<mat-sidenav-container autosize="true">
+    <mat-sidenav opened="true" mode="side">
+        <div class="opciones">
+            <h3 *ngIf="expandido">Opciones del Sistema</h3>
+        </div>
+        <gsi-menu (onValidarExpandido)="validarExpandido($event)"></gsi-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <gsi-header></gsi-header>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,22 @@
+<gsi-title></gsi-title>
+<gsi-container>
+  <perfect-scrollbar>
+    <gsi-table [data]="data" [metaDataColumns]="metaDataColumns">
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" class="align-right">
+          <button mat-icon-button color="primary" (click)="abrirFormulario(row)" matTooltip="EDITAR">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" (click)="eliminar(row._id)" matTooltip="ELIMINAR">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    </gsi-table>
+  </perfect-scrollbar>
+  <gsi-paginator [length]="totalRegistros" (onChangePage)="changePage($event)">
+  </gsi-paginator>
+</gsi-container>
+<gsi-keypad-button [keypadButtons]="keypadButtons" (onClick)="enviarAccion($event)">
+</gsi-keypad-button>
