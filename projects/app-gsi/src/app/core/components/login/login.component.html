@@ -1,17 +1,18 @@
-<form fxLayout="column">
-    <h2>Credenciales</h2>
-    <mat-form-field appearance="outline">
-        <mat-label>Usuario</mat-label>
-        <input matInput type="text" placeholder="Ingrese el Usuario" required>
-        <mat-icon matSuffix>person</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="{{ocultarPassword?'password':'text'}}" placeholder="Ingrese la Contraseña" required>
-        <button mat-icon-button type="button" matSuffix (click)="ocultarPassword=!ocultarPassword">
-            <mat-icon matSuffix>{{ ocultarPassword?"lock":"lock_open" }}</mat-icon>
-        </button>
-        
-    </mat-form-field>
-    <button mat-raised-button color="primary">Iniciar Sesión</button>
+<form fxLayout="column" [formGroup]="group">
+  <h2>Credenciales</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Usuario</mat-label>
+    <input matInput type="text" placeholder="Ingrese el Usuario" required formControlName="username">
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="{{ocultarPassword?'password':'text'}}" placeholder="Ingrese la Contraseña" required
+      formControlName="password">
+    <button mat-icon-button type="button" matSuffix (click)="ocultarPassword=!ocultarPassword">
+      <mat-icon matSuffix>{{ ocultarPassword?"lock":"lock_open" }}</mat-icon>
+    </button>
+
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="login()" [disabled]="group.invalid">Iniciar Sesión</button>
 </form>

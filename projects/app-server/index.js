@@ -13,6 +13,9 @@ app.use(cors());
 
 //Llamar a las apis
 app.use("/api/clientes", require("./rutas/clienteRuta"));
+app.use("/api/reportes", require("./rutas/reporteRuta"));
+app.use("/api/usuarios", require("./rutas/usuarioRuta"));
+app.use("/api/pasajes", require("./rutas/PasajeRuta"));
 
 //Definir ruta inicial
 app.get("/", (req, res) => {

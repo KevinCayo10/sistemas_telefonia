@@ -27,6 +27,7 @@ export class MenuService {
     { title: 'Stock', url: '/stock', icon: '/assets/icon/stock.svg' },
     { title: 'Técnicos', url: '/tecnicos', icon: '/assets/icon/technical.svg' },
     { title: 'Usuarios', url: '/usuarios', icon: '/assets/icon/users.svg' },
+    { title: 'Reportes', url: '/reportes', icon: '/assets/icon/users.svg' },
   ];
   constructor() {}
 
